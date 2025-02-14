@@ -29,7 +29,8 @@ defmodule HtmlMinifier.MixProject do
   defp deps do
     [
       {:rustler, "~> 0.30"},
-      {:rustler_precompiled, "~> 0.8"}
+      {:rustler_precompiled, "~> 0.8"},
+      {:ex_doc, ">= 0.0.0", only: :docs, runtime: false}
     ]
   end
 
