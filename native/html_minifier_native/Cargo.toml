@@ -1,0 +1,13 @@
+[package]
+name = "html_minifier_native"
+version = "0.1.0"
+authors = []
+edition = "2021"
+
+[lib]
+name = "html_minifier_native"
+crate-type = ["cdylib"]
+
+[dependencies]
+rustler = "0.36.1"
+minify-html = "0.15.0"
