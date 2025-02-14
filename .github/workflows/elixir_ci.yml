@@ -1,0 +1,39 @@
+name: Elixir CI
+
+on:
+  pull_request:
+    branches: [ "main" ]
+  push:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+
+    name: Build and test
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - uses: actions-rust-lang/setup-rust-toolchain@v1
+
+    - name: Set up Elixir
+      uses: erlef/setup-beam@v1
+      with:
+        elixir-version: 1.18
+        otp-version: 27
+
+    - name: Install dependencies
+      run: mix deps.get
+      env:
+        MIX_ENV: test
+
+    - name: Run tests
+      run: |
+        mix test
+      env:
+        MIX_ENV: test
+
