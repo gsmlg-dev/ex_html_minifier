@@ -3,6 +3,6 @@ defmodule HtmlMinifierTest do
   # doctest HtmlMinifier
 
   test "HtmlMinifier.minify" do
-    assert HtmlMinifier.minify(~s[<html          ></html>]) == ~s[<html></html>]
+    assert HtmlMinifier.minify(~s[<div          ></div>], %HtmlMinifier{}) == ~s[<div></div>]
   end
 end
