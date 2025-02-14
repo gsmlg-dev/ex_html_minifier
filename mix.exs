@@ -1,6 +1,9 @@
 defmodule HtmlMinifier.MixProject do
   use Mix.Project
 
+  @source_url "https://github.com/gsmlg-dev/ex_html_minifier.git"
+  @version "0.1.1"
+
   def project do
     [
       app: :html_minifier,
@@ -11,7 +14,7 @@ defmodule HtmlMinifier.MixProject do
       deps: deps(),
       description: "An Elixir package that minifies HTML using Rust.",
       package: package(),
-      source_url: "https://github.com/gsmlg-dev/ex_html_minifier"
+      source_url: @source_url
     ]
   end
 
@@ -25,7 +28,8 @@ defmodule HtmlMinifier.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:rustler, "~> 0.30"}
+      {:rustler, "~> 0.30"},
+      {:rustler_precompiled, "~> 0.8"}
     ]
   end
 
@@ -33,7 +37,16 @@ defmodule HtmlMinifier.MixProject do
     [
       maintainers: ["Jonathan Gao"],
       licenses: ["MIT"],
-      links: %{"GitHub" => "https://github.com/gsmlg-dev/ex_html_minifier"}
+      links: %{"GitHub" => @source_url}
+    ]
+  end
+
+  defp docs do
+    [
+      main: "readme",
+      extras: ["README.md"],
+      source_url: @source_url,
+      source_ref: "v#{@version}"
     ]
   end
 end
