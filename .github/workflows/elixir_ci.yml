@@ -22,7 +22,7 @@ jobs:
 
     - name: Build rust release
       run: |
-        cd native/my_package_native
+        cd native/html_minifier_native
         cargo build --release
 
     - name: Set up Elixir

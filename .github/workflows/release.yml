@@ -44,7 +44,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           HEX_API_KEY: ${{ secrets.HEX_API_KEY }}
         run: |
-          cd native/my_package_native
+          cd native/html_minifier_native
           cargo build --release
           mix deps.get
           sed -i 's%@version "[0-9\.]\+"%@version "${{ github.event.inputs.release-version }}"%' mix.exs
