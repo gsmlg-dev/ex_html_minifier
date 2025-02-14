@@ -2,7 +2,7 @@ defmodule HtmlMinifier.MixProject do
   use Mix.Project
 
   @source_url "https://github.com/gsmlg-dev/ex_html_minifier.git"
-  @version "0.1.1"
+  @version "0.1.2"
 
   def project do
     [
@@ -39,6 +39,7 @@ defmodule HtmlMinifier.MixProject do
     [
       maintainers: ["Jonathan Gao"],
       licenses: ["MIT"],
+      files: ~w(lib LICENSE mix.exs README.md priv native),
       links: %{"GitHub" => @source_url}
     ]
   end
