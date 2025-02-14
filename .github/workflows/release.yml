@@ -47,6 +47,8 @@ jobs:
           mix deps.get
           sed -i 's%@version "[0-9\.]\+"%@version "${{ github.event.inputs.release-version }}"%' mix.exs
           sed -i 's%{:caddy, "~> [0-9\.]\+"}%{:caddy, "~> ${{ github.event.inputs.release-version }}"}%' README.md
+          cd native/my_package_native
+          cargo build --release
 
       - name: Publish to hex.pm
         env:
