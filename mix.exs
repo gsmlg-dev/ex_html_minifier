@@ -14,6 +14,7 @@ defmodule HtmlMinifier.MixProject do
       deps: deps(),
       description: "An Elixir package that minifies HTML using Rust.",
       package: package(),
+      docs: docs(),
       source_url: @source_url
     ]
   end
