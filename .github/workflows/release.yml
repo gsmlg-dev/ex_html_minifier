@@ -44,8 +44,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           HEX_API_KEY: ${{ secrets.HEX_API_KEY }}
         run: |
-          cd native/html_minifier_native
+          cd ${{ github.workspace }}/native/html_minifier_native
           cargo build --release
+          cd ${{ github.workspace }}
           mix deps.get
           sed -i 's%@version "[0-9\.]\+"%@version "${{ github.event.inputs.release-version }}"%' mix.exs
           sed -i 's%{:html_minifier, "~> [0-9\.]\+"}%{:html_minifier, "~> ${{ github.event.inputs.release-version }}"}%' README.md
