@@ -9,7 +9,7 @@ defmodule HtmlMinifier.MixProject do
       app: :html_minifier,
       version: @version,
       elixir: "~> 1.14",
-      compilers: [:rustler] ++ Mix.compilers(),
+      compilers: Mix.compilers(),
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       description: "An Elixir package that minifies HTML using Rust.",
