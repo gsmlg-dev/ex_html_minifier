@@ -39,7 +39,7 @@ defmodule HtmlMinifier.MixProject do
     [
       maintainers: ["Jonathan Gao"],
       licenses: ["MIT"],
-      files: ~w(lib LICENSE mix.exs README.md priv native),
+      files: ~w(lib LICENSE mix.exs README.md priv native Cargo.toml),
       links: %{"GitHub" => @source_url}
     ]
   end
